@@ -2,13 +2,14 @@
 
 <h2>Description</h2>
 
-This project demonstrates hands-on threat hunting, vulnerability discovery, and incident response analysis conducted within a controlled lab environment. The work combines technical reconnaissance, vulnerability research, MITRE ATT&CK–driven threat intelligence, and business impact assessment to mirror real-world SOC and IR workflows.
+This project demonstrates hands-on threat hunting, vulnerability discovery, and incident response analysis conducted within a controlled lab environment. The work combines technical reconnaissance, vulnerability research, MITRE ATT&CK–driven threat intelligence, and STRIDE threat modeling to mirror real-world SOC and IR workflows.
 
 Key objectives include:
 
 - Network reconnaissance and service enumeration
 - Vulnerability identification and CVE analysis
 - Threat hunting using MITRE ATT&CK
+- Threat modeling using STRIDE
 - Detection logic and defensive prioritization
 - Professional documentation and reporting
 
@@ -18,7 +19,7 @@ Key objectives include:
 
 - <b>Kali Linux</b>
 - <b>Nmap</b>
-- <b>Searchsploit (Exploit-DB)</b>
+- <b>Searchsploit / Exploit-DB</b>
 - <b>MITRE ATT&CK Framework</b>
 - <b>STRIDE Threat Modeling</b>
 
@@ -48,27 +49,13 @@ Key objectives include:
 
 ---
 
-<p align="center">
-<b>TCP SYN scan against testphp.vulnweb.com</b><br/>
-<img src="screenshots/CIS+208+Project+2_page1.png" width="80%">
-</p>
+<b>TCP SYN scan against testphp.vulnweb.com</b>
 
+- Conducted TCP SYN scan using Nmap
 - Identified open and filtered TCP ports
 - Confirmed Cisco-SCCP service on port 2000
-- Observed large number of filtered (no-response) ports
-- Evaluated exposed attack surface
-
----
-
-<p align="center">
-<b>Vulnerability research using Searchsploit</b><br/>
-<img src="screenshots/Vulnerability Discovery and Analysis_page3.png" width="80%">
-</p>
-
-- Located Apache httpd version 2.4.7
-- Queried Searchsploit for known vulnerabilities
-- Selected a documented exploit for analysis
-- Tracked vulnerability to public CVE databases
+- Observed a large number of filtered (no-response) ports
+- Evaluated the externally exposed attack surface
 
 ---
 
@@ -77,9 +64,18 @@ Key objectives include:
 <img src="screenshots/Vulnerability Discovery and Analysis_page2.png" width="80%">
 </p>
 
+<p align="center">
+<img src="screenshots/Vulnerability Discovery and Analysis_page3.png" width="80%">
+</p>
+
 - Evaluated CVE-2014-0226
 - Assessed technical risk and operational impact
-- Translated technical findings into business language
+- Translated technical findings into business-focused risk language
+- Identified Apache httpd version <b>2.4.7</b> during service enumeration
+- Researched publicly known vulnerabilities associated with the identified version
+- Leveraged Exploit-DB / Searchsploit references to identify relevant exploits
+- Mapped the selected exploit to a corresponding CVE
+- Validated vulnerability details using public CVE databases (MITRE CVE / NVD)
 
 ---
 
@@ -127,47 +123,34 @@ Key objectives include:
 <h2>MITRE-Driven Threat Hunting</h2>
 
 <p align="center">
-<b>MITRE ATT&CK threat hunting analysis and case studies</b><br/>
+<b>MITRE ATT&CK threat hunting summary and observed trends</b><br/>
+<img src="screenshots/CIS+208+Project+2_page1.png" width="80%">
+</p>
+
+- Analyzed real-world threat intelligence reports from CrowdStrike and CISA
+- Identified growth in malware-free and living-off-the-land techniques
+- Observed increasing focus on identity and cloud environments
+
+<p align="center">
+<b>Observed adversary techniques mapped to MITRE ATT&CK</b><br/>
 <img src="screenshots/CIS+208+Project+2_page2.png" width="80%">
 </p>
 
-<h3>Observed Adversary Techniques</h3>
-
-<b>CrowdStrike 2025 Findings</b>
 - T1059 – Command and scripting (PowerShell)
 - T1218 – Signed binary proxy execution (LOLBins)
 - T1078 – Valid accounts
-- T1530 / T1567 – Cloud data exfiltration
-
-<b>CISA SimpleHelp RMM / Medusa</b>
-- T1190 – Exploit public-facing application
 - T1566 – Phishing
 - T1486 – Ransomware encryption
+- T1567 – Exfiltration to cloud services
 
-<b>Scattered Spider (CISA/FBI)</b>
-- T1566 – Phishing
-- T1078 / T1136 – Valid and newly created accounts
-- T1087 – Account discovery
-- T1567 – Cloud exfiltration
+<p align="center">
+<b>Aggregated trends and projected attacker behavior</b><br/>
+<img src="screenshots/CIS+208+Project+2_page3.png" width="80%">
+</p>
 
----
-
-<h2>Aggregated Threat Trends</h2>
-
-- Living-off-the-land (malware-free) techniques are increasing
-- Credential theft remains a dominant initial access vector
-- RMM tools and exposed services are high-value targets
-- Cloud platforms are increasingly used for exfiltration
-
----
-
-<h2>Projected Techniques (6–12 Months)</h2>
-
-- T1098 – Account manipulation and persistence
-- T1136 – Account creation (local and cloud)
-- T1567.002 – Exfiltration to cloud storage
-- T1548 – Abuse elevation control mechanisms
-- T1090 / T1105 – Application-layer command and control
+- Credential theft and account manipulation remain dominant access vectors
+- RMM tools and exposed services are frequent initial access points
+- Cloud platforms are increasingly used for data exfiltration
 
 ---
 
@@ -192,12 +175,13 @@ Key objectives include:
 
 <p align="center">
 <b>Identity spoofing attack tree and mitigation mapping</b><br/>
+<img src="screenshots/CIS+208+Project+1_page2.png" width="80%">
 <img src="screenshots/CIS+208+Project+1_page3.png" width="80%">
 </p>
 
-- Applied STRIDE methodology to identity spoofing
-- Mapped likelihood vs impact
-- Identified layered technical and organizational mitigations
+- Applied STRIDE methodology to analyze identity spoofing threats
+- Evaluated likelihood and impact of social engineering and credential abuse
+- Identified layered mitigations including MFA, logging, and access controls
 
 ---
 

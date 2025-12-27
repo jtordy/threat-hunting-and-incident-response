@@ -2,14 +2,13 @@
 
 <h2>Description</h2>
 
-This project demonstrates hands-on threat hunting, vulnerability discovery, and incident response analysis conducted within a controlled lab environment. The work combines technical reconnaissance, vulnerability research, MITRE ATT&CK–driven threat intelligence, and STRIDE threat modeling to mirror real-world SOC and IR workflows.
+This project demonstrates hands-on threat hunting, vulnerability discovery, and incident response analysis conducted within a controlled lab environment. The work combines technical reconnaissance, vulnerability research, and MITRE ATT&CK–driven threat intelligence to mirror real-world SOC and IR workflows.
 
 Key objectives include:
 
 - Network reconnaissance and service enumeration
 - Vulnerability identification and CVE analysis
 - Threat hunting using MITRE ATT&CK
-- Threat modeling using STRIDE
 - Detection logic and defensive prioritization
 - Professional documentation and reporting
 
@@ -21,7 +20,6 @@ Key objectives include:
 - <b>Nmap</b>
 - <b>Searchsploit / Exploit-DB</b>
 - <b>MITRE ATT&CK Framework</b>
-- <b>STRIDE Threat Modeling</b>
 
 ---
 
@@ -172,35 +170,10 @@ Key objectives include:
 
 ---
 
-<h2>STRIDE Threat Modeling</h2>
-
-<p align="center">
-<b>Identity spoofing attack tree and mitigation mapping</b><br/>
-<img src="screenshots/CIS+208+Project+1_page2.png" width="80%">
-<img src="screenshots/CIS+208+Project+1_page3.png" width="80%">
-</p>
-
-- Applied STRIDE methodology to analyze identity spoofing threats
-- Evaluated likelihood and impact of social engineering and credential abuse
-- Identified layered mitigations including MFA, logging, and access controls
-
----
-
-<h2>Recommendations & Defensive Priorities</h2>
-
-- Patch external-facing services immediately
-- Harden and monitor RMM access
-- Enforce phishing-resistant MFA
-- Treat cloud identities as first-class assets
-- Expand detections for LOLBins and credential abuse
-
----
-
 <h2>Skills Demonstrated</h2>
 
 - Threat hunting and reconnaissance
 - Vulnerability discovery and CVE analysis
 - MITRE ATT&CK mapping
-- STRIDE threat modeling
 - SOC-style reporting
 - Business risk communication

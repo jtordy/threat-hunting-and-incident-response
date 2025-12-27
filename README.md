@@ -146,6 +146,7 @@ Key objectives include:
 <p align="center">
 <b>Aggregated trends and projected attacker behavior</b><br/>
 <img src="screenshots/CIS+208+Project+2_page3.png" width="80%">
+<img src="screenshots/CIS+208+Project+2_page4.png" width="80%">
 </p>
 
 - Credential theft and account manipulation remain dominant access vectors
